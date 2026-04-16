@@ -1,0 +1,888 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.b-section {
+  background-color: #f9f9f9!important;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Make publication-link button icons visually consistent across desktop */
+.publication-links .button .icon {
+    height: auto !important;
+    min-height: 1.5em;
+    width: auto !important;
+    min-width: 1.5em;
+    overflow: visible;
+}
+.publication-links .button .icon img {
+    height: 22px !important;
+    width: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+}
+.publication-links .button .icon img[src*="hf-logo"] {
+    height: 28px !important;
+}
+.publication-links .button .icon img[src*="gh-logo"] {
+    height: 22px !important;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+/* Method section diagram images */
+img#method {
+  margin-bottom: 1.2rem;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+/* Results section: 2 picturebox sliders per row on desktop, 1 on mobile */
+.picturebox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 2.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .picturebox-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.picturebox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.picturebox.is-zoomed {
+  cursor: grab;
+}
+
+/* The "before" image is laid out in the normal flow so the picturebox
+   takes the image's natural aspect ratio (no cropping). */
+.picturebox .pb-before {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  transform-origin: 0 0;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* The "after" image overlays the box exactly. */
+.picturebox .pb-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 0 0;
+  display: block;
+  pointer-events: none;
+  transform-origin: 0 0;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.picturebox .pb-after {
+  clip-path: inset(0 0 0 50%);
+  -webkit-clip-path: inset(0 0 0 50%);
+}
+
+.picturebox .pb-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.picturebox .pb-handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.picturebox .pb-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 6 4 12 9 18'/><polyline points='15 6 20 12 15 18'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 22px;
+}
+
+.picturebox .pb-label {
+  position: absolute;
+  top: 10px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 3px;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.picturebox .pb-label-before { left: 10px; }
+.picturebox .pb-label-after  { right: 10px; }
+
+/* ---- Text-guided demo (prompt carousel + slider) ---- */
+.lang-demo-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin: 0 0 2.5rem 0;
+}
+@media (max-width: 768px) {
+  .lang-demo-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* Card frame: one hairline border, no shadow — matches the quieter,
+   academic-clean aesthetic of the .picturebox-grid section above. */
+.lang-demo {
+  width: 100%;
+  border: 1px solid #e7e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lang-demo .picturebox {
+  border-radius: 0;
+  background: #fff;
+}
+
+/* Top chrome bar — holds the prev / prompt / next controls. */
+.lang-prompt-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  background: #fafafb;
+  border-bottom: 1px solid #ececef;
+}
+
+.lang-prompt-text {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.4;
+  min-height: 1.4em;
+  user-select: none;
+  /* Grid with a single 1fr × 1fr cell lets the live text and the outgoing
+     "ghost" stack in the same place during the carousel transition while
+     still wrapping naturally to multiple lines on narrow viewports. */
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.lang-prompt-text-inner {
+  /* Stack into the same grid cell as any sibling .lang-prompt-text-inner
+     (i.e. the ghost during a transition). */
+  grid-area: 1 / 1;
+  font-style: italic;
+  font-weight: 400;
+  color: #1f1f24;
+  max-width: 100%;
+  /* Allow the long prompt to wrap onto multiple lines instead of being
+     clipped by the parent's overflow:hidden. overflow-wrap covers the
+     edge case of a single very long word. */
+  white-space: normal;
+  overflow-wrap: break-word;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Render the smart quotes upright in a muted accent so they read as
+   decoration, not as part of the italicised prompt. */
+.lang-prompt-text-inner::before,
+.lang-prompt-text-inner::after {
+  color: #a4a4ad;
+  font-style: normal;
+  font-weight: 500;
+}
+.lang-prompt-text-inner::before { content: "\201C"; margin-right: 3px; }
+.lang-prompt-text-inner::after  { content: "\201D"; margin-left: 3px; }
+
+.lang-prompt-text-inner.is-empty {
+  font-style: normal;
+  color: #9b9ba2;
+}
+.lang-prompt-text-inner.is-empty::before,
+.lang-prompt-text-inner.is-empty::after { content: ""; }
+
+/* Hidden probe used at init to measure the tallest prompt at the current
+   viewport width, so the prompt bar reserves enough vertical space and
+   doesn't jump when the user navigates between short and long prompts. */
+.lang-prompt-text-measure {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes lang-text-out-left {
+  from { transform: translateX(0);                                          opacity: 1; }
+  to   { transform: translateX(calc(var(--slide-dist, 200px) * -1));        opacity: 0; }
+}
+@keyframes lang-text-out-right {
+  from { transform: translateX(0);                                          opacity: 1; }
+  to   { transform: translateX(var(--slide-dist, 200px));                   opacity: 0; }
+}
+@keyframes lang-text-in-from-right {
+  from { transform: translateX(var(--slide-dist, 200px));                   opacity: 0; }
+  to   { transform: translateX(0);                                          opacity: 1; }
+}
+@keyframes lang-text-in-from-left {
+  from { transform: translateX(calc(var(--slide-dist, 200px) * -1));        opacity: 0; }
+  to   { transform: translateX(0);                                          opacity: 1; }
+}
+
+.lang-nav {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b6b73;
+  font: inherit;
+  line-height: 1;
+  -webkit-appearance: none;
+          appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  outline: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.lang-nav:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1d1d1f;
+}
+.lang-nav:active {
+  background: rgba(0, 0, 0, 0.10);
+}
+.lang-nav svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  stroke: currentColor;
+  pointer-events: none;
+}
+
+/* Bottom chrome bar — pagination dots show how many prompts there are
+   and which one is currently active; clicking a dot jumps to that prompt. */
+.lang-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 0;
+  background: #fafafb;
+  border-top: 1px solid #ececef;
+  user-select: none;
+}
+.lang-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d4d4d9;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.lang-dot:hover {
+  background: #9b9ba2;
+}
+.lang-dot.is-active {
+  /* Page accent (matches publication-link colour). */
+  background: hsl(204, 86%, 53%);
+  transform: scale(1.3);
+}
+/* A larger, transparent hit area around each dot so they remain easy to
+   tap on mobile without needing visually-larger dots. */
+.lang-dot {
+  position: relative;
+}
+.lang-dot::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .lang-prompt-text { font-size: 0.92rem; }
+  .lang-prompt-bar { padding: 9px 11px; }
+  .lang-nav { flex: 0 0 30px; width: 30px; height: 30px; }
+  .lang-nav svg { width: 14px; height: 14px; }
+  .lang-dots { padding: 9px 0; gap: 6px; }
+  .lang-dot { width: 6px; height: 6px; }
+}
+
+/* ---- Fullscreen view ---- */
+.picturebox .pb-fs-btn,
+.picturebox .pb-fs-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  transition: background 0.15s ease;
+}
+.picturebox .pb-fs-btn:hover,
+.picturebox .pb-fs-close:hover {
+  background: rgba(0, 0, 0, 0.78);
+}
+.picturebox .pb-fs-btn svg,
+.picturebox .pb-fs-close svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.picturebox .pb-fs-close { display: none; }
+.picturebox.is-fullscreen .pb-fs-btn { display: none; }
+.picturebox.is-fullscreen .pb-fs-close { display: flex; }
+
+/* Hide the open-fullscreen button until the user hovers the picturebox,
+   matching the zoom-in/out buttons. The close button (shown only inside
+   fullscreen mode) stays at full opacity. On touch devices we keep it
+   softly visible since there's no hover signal. */
+.picturebox .pb-fs-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, background 0.15s ease;
+}
+.picturebox:hover .pb-fs-btn {
+  opacity: 0.75;
+  pointer-events: auto;
+}
+.picturebox .pb-fs-btn:hover {
+  opacity: 1;
+}
+@media (hover: none) {
+  .picturebox .pb-fs-btn {
+    opacity: 0.55;
+    pointer-events: auto;
+  }
+}
+
+/* ---- Zoom in / out buttons ---- */
+/* Hidden by default; fade in to a semi-transparent state when the user
+   hovers the picturebox. Hovering the button itself bumps to full opacity.
+   On touch devices (no hover capability) we keep them softly visible so
+   they remain discoverable. */
+.picturebox .pb-zoom {
+  position: absolute;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, background 0.15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+.picturebox .pb-zoom-in  { top: 50px; }
+.picturebox .pb-zoom-out { top: 90px; }
+.picturebox:hover .pb-zoom {
+  opacity: 0.75;
+  pointer-events: auto;
+}
+.picturebox .pb-zoom:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.78);
+}
+.picturebox .pb-zoom svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+}
+/* On touch devices the user already has pinch-to-zoom; hide the
+   plus/minus buttons entirely to keep the image clean. */
+@media (hover: none) {
+  .picturebox .pb-zoom {
+    display: none;
+  }
+}
+
+.pb-fs-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.96);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+body.has-pb-fullscreen {
+  overflow: hidden;
+}
+body.has-pb-fullscreen .pb-fs-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.picturebox.is-fullscreen {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 96vw;
+  max-height: 92vh;
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.picturebox.is-fullscreen .pb-before {
+  width: auto;
+  height: auto;
+  max-width: 96vw;
+  max-height: 92vh;
+}
+.picturebox.is-fullscreen .pb-fs-close {
+  top: 12px;
+  right: 12px;
+}
+
+
+/* ---------------------------------------------------------------------------
+   Mobile font-size optimizations
+   --------------------------------------------------------------------------- */
+
+/* Tablet and below */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* Hero / publication header */
+  .hero .publication-title.title.is-1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+  }
+  .publication-authors,
+  .publication-authors .is-size-5,
+  .is-size-5 {
+    font-size: 1rem !important;
+  }
+  .publication-authors .author-block {
+    display: inline-block;
+    margin: 0 4px;
+  }
+
+  /* Publication action buttons (arXiv, Code, Demo, ...) */
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  .publication-links .link-block {
+    margin: 0;
+  }
+  .publication-links .button.is-normal {
+    font-size: 0.95rem;
+    padding: 0.5em 1.15em;
+    height: 2.45em;
+    line-height: 1;
+  }
+  .publication-links .button .icon {
+    height: auto !important;
+    min-height: 1.4em;
+    width: auto !important;
+    min-width: 1.4em;
+    overflow: visible;
+  }
+  .publication-links .button .icon:first-child:not(:last-child) {
+    margin-left: 0 !important;
+    margin-right: 0.45em !important;
+  }
+  .publication-links .button .icon img {
+    height: 18px !important;
+    width: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+  }
+  .publication-links .button .icon img[src*="hf-logo"] {
+    height: 24px !important;
+  }
+  .publication-links .button .icon img[src*="gh-logo"] {
+    height: 19px !important;
+  }
+
+  /* Teaser caption — keep ~1.25x of body copy (matches desktop proportion) */
+  .hero.teaser .subtitle,
+  .subtitle {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    padding: 0 0.25rem;
+  }
+
+  /* Section titles ("Abstract", "Method", "Results", "BibTeX")
+     Covers both `.title.is-3` and bare `.title` (Bulma defaults bare to ~2rem). */
+  .section h2.title,
+  .section .title.is-3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Subsection titles ("Background Removal", etc.) */
+  .title.is-4,
+  .section h3.title {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Body / abstract / paragraph copy */
+  .content p,
+  .content li,
+  .hero.method p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 1.1em;
+  }
+  .content.has-text-justified,
+  .has-text-justified {
+    text-align: left !important;
+  }
+
+  /* BibTeX block */
+  #BibTeX pre,
+  #BibTeX code {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Footer */
+  .footer .icon-link {
+    font-size: 22px;
+  }
+  .footer .content p {
+    font-size: 0.85rem;
+  }
+
+  /* Picturebox slider chrome */
+  .picturebox .pb-label {
+    font-size: 10px;
+    padding: 2px 6px;
+    top: 6px;
+  }
+  .picturebox .pb-label-before { left: 6px; }
+  .picturebox .pb-label-after  { right: 6px; }
+  .picturebox .pb-handle::before {
+    width: 30px;
+    height: 30px;
+  }
+  .picturebox .pb-handle::after {
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+  }
+
+  /* Tighten vertical spacing between sections */
+  .section {
+    padding: 1.25rem 1rem;
+  }
+  .hero .hero-body {
+    padding: 1rem 1rem;
+  }
+  .hero.teaser .hero-body {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  section.hero.method .hero-body {
+    padding: 0.75rem 0;
+  }
+  img#method {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .hero .publication-title.title.is-1 {
+    font-size: 1.7rem;
+  }
+  .publication-authors,
+  .publication-authors .is-size-5,
+  .is-size-5 {
+    font-size: 0.9rem !important;
+  }
+  .publication-links .button.is-normal {
+    font-size: 0.88rem;
+    padding: 0.45em 1em;
+    height: 2.3em;
+  }
+  .hero.teaser .subtitle,
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-top: 0.7rem;
+  }
+  .section h2.title,
+  .section .title.is-3 {
+    font-size: 1.4rem;
+  }
+  .title.is-4,
+  .section h3.title {
+    font-size: 1.1rem;
+  }
+  .content p,
+  .content li,
+  .hero.method p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  #BibTeX pre,
+  #BibTeX code {
+    font-size: 0.72rem;
+  }
+  .section {
+    padding: 1rem 0.9rem;
+  }
+  .hero .hero-body {
+    padding: 0.8rem 0.9rem;
+  }
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching">
+  <meta name="keywords" content="FlowDIS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching</title>
+
+  <!-- Social media preview (Open Graph + Twitter Card) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowdis.github.io/">
+  <meta property="og:title" content="FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching">
+  <meta property="og:description" content="Highly accurate foreground segmentation, optionally guided by a text prompt.">
+  <meta property="og:image" content="https://flowdis.github.io/static/images/preview.png">
+  <meta property="og:image:secure_url" content="https://flowdis.github.io/static/images/preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="FlowDIS — Language-Guided Dichotomous Image Segmentation with Flow Matching">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://flowdis.github.io/">
+  <meta name="twitter:title" content="FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching">
+  <meta name="twitter:description" content="Highly accurate foreground segmentation, optionally guided by a text prompt.">
+  <meta name="twitter:image" content="https://flowdis.github.io/static/images/preview.png">
+  <meta name="twitter:image:alt" content="FlowDIS — Language-Guided Dichotomous Image Segmentation with Flow Matching">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LKTH0EK08"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-0LKTH0EK08');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=cg74A98AAAAJ&hl=en">Andranik Sargsyan</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=VJSh59sAAAAJ&hl=en">Shant Navasardyan</a></span>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Picsart AI Resarch (PAIR)</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.05077"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./static/images/arxiv-logo.svg" alt="Button Image" style="height: 20px!important;">
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Picsart-AI-Research/FlowDIS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./static/images/gh-logo.svg" alt="GitHub">
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/PAIR/FlowDIS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./static/images/hf-logo.svg" alt="Button Image">
+                  </span>
+                  <span>Demo</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/videos/teaser-light.avif" alt="FlowDIS teaser" width="100%">
+      <p class="subtitle has-text-centered">
+        <span class="dnerf" style="font-weight: bold;">FlowDIS</span> enables highly accurate foreground segmentation, optionally guided by a text prompt. When ambiguity prevents the model from producing the desired result, the user can specify which elements to retain in the
+        foreground.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Accurate image segmentation is essential for modern computer vision applications such as image editing, 
+            autonomous driving, and medical image analysis. In recent years, Dichotomous Image Segmentation (DIS) has 
+            become a standard task for training and evaluating highly accurate segmentation models. 
+            Existing DIS approaches often fail to preserve fine-grained details or fully capture the semantic 
+            structure of the foreground. To address these challenges, we present <strong>FlowDIS</strong>, 
+            a novel dichotomous image segmentation method built on the flow matching framework, 
+            which learns a time-dependent vector field to transport the image distribution to the 
+            corresponding mask distribution, optionally conditioned on a text prompt. Moreover, 
+            with our <strong>Position-Aware Instance Pairing (PAIP)</strong> training strategy, 
+            FlowDIS offers strong controllability through text prompts, enabling precise, 
+            pixel-level object segmentation. Extensive experiments demonstrate that our 
+            method significantly outperforms state-of-the-art approaches both with and without language guidance. 
+            Compared with the best prior DIS method, FlowDIS achieves a <strong>5.5% higher</strong> 
+            <span class="math inline">\(F_{\beta}^{\omega}\)</span> measure 
+            and <strong>43% lower</strong> MAE <span class="math inline">(<span class="math inline">\(\mathcal{M}\)</span>) 
+            on the DIS-TE test set. The code is available at: 
+            <a href="https://github.com/Picsart-AI-Research/FlowDIS">https://github.com/Picsart-AI-Research/FlowDIS</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
+    <!-- <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 height="100%">
+      <source src="./static/videos/main_video_compressed.mp4"
+              type="video/mp4">
+    </video> -->
+
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" id="Method">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Method</h2>
+    <section class="hero method">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/main_diagram.svg" style="width:100%;height:100%;">
+          <p>
+            <strong>Overall framework of FlowDIS.</strong> During training, a batch of samples is passed to PAIP, which selectively combines pairs of
+            <em>(image, mask, prompt)</em> triplets to produce a mixed batch. The mixed images and masks are
+            encoded into the VAE latent space. For timesteps
+            <span class="math inline">\( t \sim p(t) \)</span>, intermediate latents
+            <span class="math inline">\( z_{t} \)</span> are obtained as a linear interpolation between the
+            image and mask latents. Text prompts are encoded by the text encoder, and the resulting tokens
+            <span class="math inline">\( c_{\tau} \)</span>, together with
+            <span class="math inline">\( z_{t} \)</span>, <span class="math inline">\( z^I \)</span> and the
+            sampled timesteps <span class="math inline">\( t \)</span>, are fed into the MMDiT velocity
+            prediction model. The training loss is computed as the MSE between the predicted and ground-truth
+            velocities. During inference, the probability flow ODE is iteratively solved for
+            <span class="math inline">\( \hat{z}_0 \)</span> with the initial condition
+            <span class="math inline">\( \hat{z}_{1} = z^{I} \)</span>, where
+            <span class="math inline">\( z^{I} \)</span> denotes the VAE encoding of the input image. The
+            resulting latent <span class="math inline">\( \hat{z}_0 \)</span> is then decoded by the VAE
+            decoder to obtain the final mask prediction.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="section b-section" id="PAIP">
+  <div class="container is-max-desktop content">
+    <!-- <h2 class="title">PAIP</h2> -->
+    <section class="hero method">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/paip.svg" style="width:100%;height:100%;">
+          <p>
+            <strong>Illustration of the Position-Aware Instance Pairing (PAIP) strategy.</strong>
+            <strong>(a)</strong> A reference sample (top triplet) is paired with another sample from the same
+            batch (bottom triplet).
+            <strong>(b)</strong> Candidate rectangular regions (in green) adjacent to the minimal bounding box
+            (outlined in red) of the reference foreground are computed, and the one with the maximum area is
+            selected as <span class="math inline">\( R^{\text{max}}_j \)</span>.
+            <strong>(c)</strong> The reference image is padded along the side adjacent to
+            <span class="math inline">\( R^{\text{max}}_j \)</span> by an amount equal to the length of its
+            opposite side.
+            <strong>(d)</strong> The pairing foreground is cropped, resized, and placed within the designated
+            placement area.
+            <strong>(e)</strong> Mask and prompt options are then constructed, from which PAIP randomly
+            selects one for training.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="section" id="Results">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Results</h2>
+
+    <h3 class="title is-4">Background Removal</h3>
+    <div class="picturebox-grid">
+      <div class="picturebox">
+        <img class="pb-before" src="./static/images/2_image.jpg" alt="">
+        <img class="pb-after"  src="./static/images/2_result.png" alt="">
+        <!-- <span class="pb-label pb-label-before">Input</span>
+        <span class="pb-label pb-label-after">Result</span> -->
+        <div class="pb-handle"></div>
+      </div>
+      <div class="picturebox">
+        <img class="pb-before" src="./static/images/3_image.png" alt="">
+        <img class="pb-after"  src="./static/images/3_result.png" alt="">
+        <!-- <span class="pb-label pb-label-before">Input</span>
+        <span class="pb-label pb-label-after">Result</span> -->
+        <div class="pb-handle"></div>
+      </div>
+      <div class="picturebox">
+        <img class="pb-before" src="./static/images/1_image.jpg" alt="">
+        <img class="pb-after"  src="./static/images/1_result.png" alt="">
+        <!-- <span class="pb-label pb-label-before">Input</span>
+        <span class="pb-label pb-label-after">Result</span> -->
+        <div class="pb-handle"></div>
+      </div>
+      <div class="picturebox">
+        <img class="pb-before" src="./static/images/4_image.jpg" alt="">
+        <img class="pb-after"  src="./static/images/4_result.png" alt="">
+        <!-- <span class="pb-label pb-label-before">Input</span>
+        <span class="pb-label pb-label-after">Result</span> -->
+        <div class="pb-handle"></div>
+      </div>
+    </div>
+
+    <h3 class="title is-4">Text-Guided Foreground Segmentation</h3>
+
+    <div class="lang-demo-row">
+      <div class="lang-demo" data-lang-base="./static/images/lang/1/">
+        <div class="lang-prompt-bar">
+          <button type="button" class="lang-nav lang-prev" aria-label="Previous prompt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 6 9 12 15 18"/>
+            </svg>
+          </button>
+          <div class="lang-prompt-text" aria-live="polite">
+            <span class="lang-prompt-text-inner">A person and a skateboard.</span>
+          </div>
+          <button type="button" class="lang-nav lang-next" aria-label="Next prompt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 6 15 12 9 18"/>
+            </svg>
+          </button>
+        </div>
+        <div class="picturebox lang-pb">
+          <img class="pb-before" src="./static/images/lang/1/6_image.jpg" alt="">
+          <img class="pb-after"  src="./static/images/lang/1/A person and a skateboard.png" alt="">
+          <div class="pb-handle"></div>
+        </div>
+      </div>
+      
+      <div class="lang-demo" data-lang-base="./static/images/lang/2/">
+        <div class="lang-prompt-bar">
+          <button type="button" class="lang-nav lang-prev" aria-label="Previous prompt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 6 9 12 15 18"/>
+            </svg>
+          </button>
+          <div class="lang-prompt-text" aria-live="polite">
+            <span class="lang-prompt-text-inner">A book and a hat on a white textured towel.</span>
+          </div>
+          <button type="button" class="lang-nav lang-next" aria-label="Next prompt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 6 15 12 9 18"/>
+            </svg>
+          </button>
+        </div>
+        <div class="picturebox lang-pb">
+          <img class="pb-before" src="./static/images/lang/2/5_image.jpg" alt="">
+          <img class="pb-after"  src="./static/images/lang/2/A book and a hat on a white textured towel.png" alt="">
+          <div class="pb-handle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p> If you use our work in your research, please cite our publication: </p>
+    <pre>
+<code>@article{sargsyan2026flowdis,
+  title={{FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching}},
+  author={Sargsyan, Andranik and Navasardyan, Shant},
+  journal={arXiv preprint arXiv:2605.05077},
+  year={2026},
+  eprint={2605.05077},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2605.05077}
+}</code>
+    </pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/pdf/">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Picsart-AI-Research/FlowDIS" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
